@@ -1,0 +1,398 @@
+.cafe-wifi-demo {
+  font-family: "Host Grotesk", sans-serif;
+  width: 100%;
+}
+
+/* Hero Section */
+.cafe-hero {
+  background: linear-gradient(135deg, rgba(173, 134, 75, 0.9) 0%, rgba(74, 48, 14, 0.95) 100%),
+    url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800') center/cover;
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.cafe-hero-content {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 30px;
+  min-width: 650px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cafe-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cafe-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 20px 0;
+  font-size: 1rem;
+}
+
+.cafe-info {
+  color:#301f09;
+  font-size: 2rem;
+  font-weight: 700;
+  margin:30px;
+}
+
+.cafe-results {
+  margin-top: 20px;
+  min-height: 200px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius:10px;
+  padding:20px;
+}
+
+.cafe-input {
+  background-color: #ffffff;
+  color:#333;
+  padding:20px 30px;
+  border-radius:1000px;
+  min-width:550px;
+}
+
+.cafe-input input {
+  width:500px;
+  border:none;
+}
+
+.cafe-input input:focus{
+  outline:none;
+}
+
+.cafe-hero-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cafe-btn {
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.cafe-btn-primary {
+  background-color: #4A300E;
+  color: white;
+}
+
+.cafe-btn-primary:hover {
+  background-color: #301f09;
+  transform: translateY(-2px);
+}
+
+.cafe-btn-secondary {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 20px;
+  width:100%;
+  margin-top:10px; 
+  border-radius:10px;
+  display:flex
+}
+
+.cafe-btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Content */
+.cafe-content {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius:20px;
+  padding: 20px;
+  /* min-height: 400px; */
+}
+
+.cafe-content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  background: white;
+  border-radius: 10px;
+  padding: 15px 20px;
+  height: max-content;
+}
+
+.cafe-content-header h3 {
+  margin: 0;
+  color: #4c4c4c;
+  font-size: 1.1rem;
+}
+
+.input-add-cafe,
+.cafe-search {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  width: 280px;
+  max-width: 100%;
+  font-size: 0.9rem;
+  color:#333;
+}
+
+.cafe-search:focus {
+  outline: none;
+  border-color: #4A300E;
+}
+
+.cafe-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 15px 0;
+}
+
+/* Cafe List */
+.cafe-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+  padding: 10px;
+  background-color:white;
+  border-radius:10px;
+  height:100%
+}
+
+/* Cafe Card */
+.cafe-item {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  border: 2px solid #4c4c4c;
+  border-radius: 10px;
+  padding: 10px;
+  background: white;
+  min-height: 350px;
+  gap: 15px;
+}
+
+.desktop-card {
+  display: grid;
+}
+
+.mobile-card {
+  display: none;
+}
+
+.cafe-img-section {
+  background: linear-gradient(135deg, rgb(173, 134, 75) 0%, #4A300E 100%);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cafe-img-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.cafe-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cafe-actions {
+  color: white;
+  font-size: 0.85rem;
+  margin: 10px 0 0 0;
+}
+
+.cafe-action-link {
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.cafe-action-link:hover {
+  opacity: 0.7;
+}
+
+.cafe-tap-hint {
+  color: white;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin: 10px 0 0 0;
+}
+
+.cafe-info-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.cafe-info-section h4 {
+  margin: 0 0 5px 0;
+  color: #4A300E;
+  font-size: 1.2rem;
+}
+
+.cafe-info-section h5 {
+  margin: 0 0 15px 0;
+  color: #666;
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+
+.cafe-info-section p {
+  margin: 0 0 6px 0;
+  color: #4c4c4c;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.cafe-map-link {
+  color: #4A300E;
+  text-decoration: none;
+  font-size: 0.85rem;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.cafe-map-link:hover {
+  text-decoration: underline;
+}
+
+/* Flip Card (Mobile) */
+.cafe-flip-card {
+  perspective: 1000px;
+  height: 350px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.cafe-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.cafe-flip-card.flipped .cafe-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.cafe-flip-front,
+.cafe-flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  background: white;
+  border: 2px solid #4c4c4c;
+  overflow: hidden;
+}
+
+.cafe-flip-front .cafe-img-section {
+  height: 100%;
+  justify-content: center;
+}
+
+.cafe-flip-front .cafe-img-container {
+  height: 70%;
+}
+
+.cafe-flip-back .cafe-info-section {
+  color: white;
+  text-align: center;
+}
+
+
+.cafe-no-results {
+  text-align: center;
+  color: white;
+  padding: 40px;
+  font-size: 1.1rem;
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .cafe-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .desktop-card {
+    display: none;
+  }
+  
+  .mobile-card {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .cafe-hero {
+    padding: 20px;
+    min-height: 250px;
+  }
+  
+  .cafe-hero-content {
+    padding: 20px;
+  }
+  
+  .cafe-title {
+    font-size: 1.8rem;
+  }
+  
+  .cafe-hero-buttons {
+    flex-direction: column;
+  }
+  
+  .cafe-tabs {
+    flex-direction: column;
+  }
+  
+  .cafe-tab {
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .cafe-content {
+    border-radius: 20px;
+  }
+  
+  .cafe-content-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .cafe-search {
+    width: 100%;
+  }
+  
+  .cafe-list {
+    padding: 0;
+  }
+}

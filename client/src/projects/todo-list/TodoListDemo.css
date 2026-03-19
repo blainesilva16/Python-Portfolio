@@ -1,0 +1,27 @@
+.todo-demo-container {
+  position: relative;
+  overflow: visible;
+}
+
+/* Scoped overlay and sidebar transitions inside the demo container */
+.todo-demo-container .todo-overlay {
+  border-radius: 18px;
+  transition: opacity 280ms ease;
+}
+
+.todo-demo-container .todo-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.todo-demo-container .todo-sidebar {
+  /* start hidden off-canvas */
+  transform: translateX(-110%);
+  opacity: 0;
+  transition: transform 280ms cubic-bezier(.2,.8,.2,1), opacity 280ms ease;
+}
+
+.todo-demo-container .todo-sidebar.active {
+  transform: translateX(0);
+  opacity: 1;
+}

@@ -1,0 +1,538 @@
+.yt-demo-container {
+  background-color: #FF6B6B;
+  padding: 20px;
+  border-radius: 20px;
+  min-height: 80vh;
+}
+
+.yt-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.yt-h1 {
+  color: white;
+  font-family: "Host Grotesk", sans-serif;
+  font-weight: 600;
+  margin: 0;
+}
+
+.yt-info-icon {
+  position: relative;
+  cursor: pointer;
+  color: white;
+}
+
+.yt-tooltip {
+  position: absolute;
+  top: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  width: 250px;
+  z-index: 10;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.yt-container-tabs {
+  width: 100%;
+  min-height: 75vh;
+  border: 2px solid white;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+}
+
+.yt-table-holder {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+}
+
+.yt-tabs {
+  width: 100%;
+}
+
+.yt-tab-links {
+  list-style: none;
+  margin: 0 20px;
+  padding: 0;
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.yt-tab-links::-webkit-scrollbar {
+  height: 8px;
+}
+
+.yt-tab-links::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.yt-tab-links li {
+  margin: 0 5px;
+  flex-shrink: 0;
+}
+
+.yt-tab-links a {
+  padding: 8px 20px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 10px 10px 0 0;
+  background: #007bff;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  transition: all 0.15s linear;
+}
+
+.yt-tab-links a:hover {
+  background: #0056b3;
+}
+
+.yt-tab-links li.active a {
+  background: white;
+  color: #4c4c4c;
+}
+
+.yt-track-options {
+  display: flex;
+  gap: 10px;
+}
+
+.yt-track-options svg {
+  cursor: pointer;
+  color: #888;
+  transition: color 0.2s;
+}
+
+.yt-track-options svg:hover {
+  color: #007bff;
+}
+
+.yt-track-options svg:last-child:hover {
+  color: #dc3545;
+}
+
+.yt-tab-select {
+  display: none;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 4px 10px;
+  color: white;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.yt-tab-select option {
+  color: black;
+}
+
+.yt-tab-content {
+  padding: 20px;
+  border-radius: 20px;
+  background: white;
+  border: 2px solid #ffffff;
+  min-height: 55vh;
+}
+
+.yt-tab-content-inner {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 20px;
+}
+
+.yt-year-calendar {
+  display: grid;
+  grid-template-columns: 30px repeat(31, 25px);
+  grid-template-rows: 30px repeat(12, 25px);
+  justify-content: center;
+  align-items: center;
+}
+
+.yt-year-calendar-vertical {
+  display: none;
+  grid-template-columns: 30px repeat(12, 25px);
+  grid-template-rows: 30px repeat(31, 25px);
+  justify-content: center;
+  align-items: center;
+}
+
+.yt-empty-corner {
+  width: 30px;
+  height: 30px;
+}
+
+.yt-day-number-label,
+.yt-month-label {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #555;
+  box-sizing: border-box;
+}
+
+.yt-month-label {
+  width: 30px;
+}
+
+.yt-year-day {
+  width: 25px;
+  height: 25px;
+  border: 1px solid white;
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.yt-year-day:hover:not(.placeholder) {
+  background-color: #b6b5b5;
+}
+
+.yt-year-day.placeholder {
+  visibility: hidden;
+  cursor: default;
+}
+
+.yt-year-reference {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.yt-year-reference h5 {
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.yt-color-codes {
+  flex: 1;
+}
+
+.yt-color-code {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.yt-color-code:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+.yt-color-code.selected {
+  background-color: rgba(0, 123, 255, 0.2);
+  border: 2px solid #007bff;
+}
+
+.yt-color-code:last-child {
+  border-bottom: none;
+}
+
+.yt-color-info {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.yt-color-info p {
+  margin: 0;
+  color: #333;
+  font-size: 14px;
+}
+
+.yt-color {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.yt-color-options {
+  display: none;
+  gap: 10px;
+}
+
+.yt-color-code:hover .yt-color-options {
+  display: flex;
+}
+
+.yt-color-options svg {
+  cursor: pointer;
+  color: #888;
+  transition: color 0.2s;
+}
+
+.yt-color-options svg:hover {
+  color: #007bff;
+}
+
+.yt-color-options svg:last-child:hover {
+  color: #dc3545;
+}
+
+.yt-color-code-input {
+  margin-top: 10px;
+}
+
+.yt-color-input-row {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.yt-color-input-row input[type="color"] {
+  width: 100%;
+  height: 35px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.yt-color-input-row input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color:#333;
+  width:150px;
+}
+
+.yt-color-input-row input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.yt-color-code-input button {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.yt-color-code-input button:hover {
+  background-color: #0056b3;
+}
+
+/* Mobile horizontal reference */
+.yt-year-reference-horizontal {
+  display: none;
+  background-color: white;
+  border-radius: 20px 20px 0 0;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.yt-horizontal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.yt-horizontal-header h6 {
+  margin: 0;
+  color: #333;
+}
+
+.yt-color-codes-horizontal {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.yt-color-code-horizontal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.yt-color-code-horizontal.selected {
+  background-color: rgba(0, 123, 255, 0.2);
+}
+
+.yt-color-code-horizontal span {
+  font-size: 12px;
+  color: #333;
+}
+
+/* Modal styles */
+.yt-modal-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px 0;
+  color:#333
+}
+
+.yt-modal-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.yt-modal-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+.yt-modal-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.yt-modal-buttons button.primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.yt-modal-buttons button.primary:hover {
+  background-color: #0056b3;
+}
+
+.yt-modal-buttons button.danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.yt-modal-buttons button.danger:hover {
+  background-color: #c82333;
+}
+
+/* Responsive */
+@media (max-width: 1300px) {
+  .yt-year-calendar-vertical {
+    display: grid;
+  }
+  
+  .yt-year-calendar {
+    display: none;
+  }
+  
+  .yt-tab-content-inner {
+    grid-template-columns: 65% 35%;
+  }
+}
+
+@media (max-width: 800px) {
+  .yt-container-tabs {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .yt-tab-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  
+  .yt-tab-links li {
+    margin: 5px 0;
+    width: 100%;
+  }
+  
+  .yt-tab-links a {
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 660px) {
+  .yt-container-tabs {
+    padding: 0;
+  }
+  
+  .yt-table-holder {
+    padding: 10px;
+  }
+  
+  .yt-tab-content {
+    padding: 10px;
+  }
+  
+  .yt-tab-content-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .yt-year-reference {
+    display: none;
+  }
+  
+  .yt-year-reference-horizontal {
+    display: block;
+    width: 100%;
+  }
+  
+  .yt-tab-links {
+    display: none;
+  }
+  
+  .yt-tab-select {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .yt-day-number-label,
+  .yt-month-label {
+    font-size: 0.7em;
+  }
+  
+  .yt-year-calendar-vertical {
+    grid-template-columns: 30px repeat(12, 20px);
+    grid-template-rows: 30px repeat(31, 20px);
+  }
+  
+  .yt-year-day {
+    width: 20px;
+    height: 20px;
+  }
+}

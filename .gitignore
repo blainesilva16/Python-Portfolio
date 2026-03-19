@@ -1,0 +1,12 @@
+.env
+
+/server/.env
+/server/node_modules
+/client/node_modules
+/dist
+/server/__pycache__
+/server/venv
+/server/token.txt
+
+/backend/.env
+/backend/.aws-sam

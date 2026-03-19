@@ -1,0 +1,53 @@
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: 0.2s;
+  gap: 10px;
+}
+
+.menu-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-type {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    color:#333;
+    width:100%;
+}
+
+.input-type:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.select-type {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    color: #333;
+    width: 100%;
+}
+
+.select-type:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.button-check {
+  background-color:  hsla(45 100% 55%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  padding: 0 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}

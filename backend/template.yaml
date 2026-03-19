@@ -1,0 +1,60 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Parameters:
+  Environment:
+    Type: String
+    Default: production
+    Description: Environment name
+  
+  DatabaseUrl:
+    Type: String
+    Default: ""
+    Description: Database connection string
+    NoEcho: true
+  
+  ApiKey:
+    Type: String
+    Default: ""
+    Description: API Key for external services
+    NoEcho: true
+  
+  SecretKey:
+    Type: String
+    Default: ""
+    Description: Flask secret key
+    NoEcho: true
+
+Resources:
+  FlaskFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      PackageType: Image
+      ImageConfig:
+        Command: ["app.app"]
+      Timeout: 30
+      MemorySize: 512
+      Environment:
+        Variables:
+          ENVIRONMENT: !Ref Environment
+          DATABASE_URL: !Ref DatabaseUrl
+          API_KEY: !Ref ApiKey
+          SECRET_KEY: !Ref SecretKey
+          PORT: 8080
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: ANY
+            Cors:
+              AllowMethods: "'GET,POST,PUT,DELETE,OPTIONS'"
+              AllowHeaders: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              AllowOrigin: "'*'"
+
+Outputs:
+  ApiUrl:
+    Description: API Gateway endpoint URL
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+    Export:
+      Name: !Sub "${AWS::StackName}-ApiUrl"
